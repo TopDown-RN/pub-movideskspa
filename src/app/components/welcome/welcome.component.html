@@ -1,0 +1,45 @@
+<main *ngIf="!enviado" class="d-flex flex-column align-items-center my-5">
+  <h2 class="text-center">Olá, {{ pessoa.usuario?.nome }}</h2>
+  <h5 class="text-center">
+    Para facilitar nosso contato é necessário validar seu e-mail
+  </h5>
+  <p class="text-center">
+    Insira seu e-mail no campo abaixo e clique em "Enviar Código"
+  </p>
+
+  <form #formulario="ngForm" class="mb-3 col-md-3">
+    <label for="campo_email" class="form-label"><strong>E-mail:</strong></label>
+    <input
+      #campoEmail
+      id="campo_email"
+      type="email"
+      name="email"
+      [(ngModel)]="emailFornecido"
+      class="form-control is-invalid"
+      [class.is-invalid]="!formulario.valid && formulario.touched"
+      placeholder="usuario@email.com"
+      pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+      required
+    />
+    <div class="invalid-feedback">E-mail é invalido</div>
+  </form>
+  <button
+    [disabled]="!formulario.valid"
+    (click)="clicarBto()"
+    class="btn btn-primary my-2"
+  >
+    Enviar Código
+  </button>
+</main>
+
+<h1 *ngIf="enviado" class="d-flex flex-column align-items-center my-5">
+  Enviando...
+  <div class="bar my-3"></div>
+</h1>
+<p
+  *ngIf="erroEnvio"
+  class="text-danger d-flex flex-column align-items-center my-5"
+>
+  Houve um erro ao enviar o código, tente novamente. Se persistir, entre em
+  contato.
+</p>

@@ -1,0 +1,26 @@
+.bar {
+  border: solid black 2px;
+  border-radius: 5px;
+  width: 40%;
+  height: 20px;
+  background-color: #eee;
+  animation: fill 4s linear infinite;
+}
+
+@keyframes fill {
+  0% {
+    background-color: #eee;
+  }
+  25% {
+    background-color: #ff0000;
+  }
+  50% {
+    background-color: #00ff00;
+  }
+  75% {
+    background-color: #0000ff;
+  }
+  100% {
+    background-color: #eee;
+  }
+}

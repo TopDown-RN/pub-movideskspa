@@ -1,0 +1,107 @@
+<main style="width: 600px">
+  <div class="mx-5">
+    <form #formulario="ngForm">
+      <div class="mb-3 col-md-12">
+        <label for="campo_empresa" class="form-label">empresa:</label>
+        <input
+          #campoempresa
+          name="empresa"
+          [(ngModel)]="empresa"
+          id="campo_empresa"
+          type="text"
+          class="form-control"
+        />
+      </div>
+
+      <div class="mb-3 col-md-12">
+        <label for="campocnpj" class="form-label">cnpj:</label>
+        <input
+          #campo_cnpj
+          name="cnpj"
+          [(ngModel)]="cnpj"
+          id="campo_cnpj"
+          type="text"
+          class="form-control"
+        />
+      </div>
+
+      <div class="mb-3 col-md-12">
+        <label for="camponome" class="form-label">nome:</label>
+        <input
+          #campo_nome
+          name="nome"
+          [(ngModel)]="nome"
+          id="campo_nome"
+          type="text"
+          class="form-control"
+        />
+      </div>
+
+      <div class="mb-3 col-md-12">
+        <label for="campocpf" class="form-label">cpf:</label>
+        <input
+          #campo_cpf
+          name="cpf"
+          [(ngModel)]="cpf"
+          id="campo_cpf"
+          type="text"
+          class="form-control"
+        />
+      </div>
+
+      <div class="mb-3 col-md-12">
+        <label for="campotelefone" class="form-label">telefone:</label>
+        <input
+          #campo_telefone
+          name="telefone"
+          [(ngModel)]="telefone"
+          id="campo_telefone"
+          type="text"
+          class="form-control"
+        />
+      </div>
+
+      <div class="mb-3 col-md-12">
+        <label for="campoemail" class="form-label">email:</label>
+        <input
+          #campo_email
+          name="email"
+          [(ngModel)]="email"
+          id="campo_email"
+          type="text"
+          class="form-control"
+        />
+      </div>
+
+      <div class="mb-3 col-md-12">
+        <label for="campomodulo" class="form-label">modulo:</label>
+        <input
+          #campo_modulo
+          name="modulo"
+          [(ngModel)]="modulo"
+          id="campo_modulo"
+          type="text"
+          class="form-control"
+        />
+      </div>
+
+      <div class="mb-3 col-md-12">
+        <label for="campocodigo" class="form-label">codigo:</label>
+        <input
+          #campo_codigo
+          name="codigo"
+          [(ngModel)]="codigo"
+          id="campo_codigo"
+          type="text"
+          class="form-control"
+        />
+      </div>
+
+      <div class="d-flex justify-content-end">
+        <button (click)="abrir()" class="btn btn-primary my-2 mx-3">
+          Gerar
+        </button>
+      </div>
+    </form>
+  </div>
+</main>

@@ -1,0 +1,44 @@
+<main *ngIf="!enviado" class="d-flex flex-column align-items-center my-5">
+  <h2 class="text-center">Olá, {{ pessoa.usuario?.nome }}</h2>
+  <p class="text-center">Enviamos um e-mail para você com um código.</p>
+  <p class="text-center">
+    Encontre-o na sua caixa de entrada, digite-o neste campo abaixo e clique em
+    "Verificar Código"
+  </p>
+  <section *ngIf="!expirado">
+    <div class="mb-3 col-md2">
+      <label for="campo_codigo" class="form-label"
+        ><strong>Digite o Código</strong>
+      </label>
+      <input
+        #codigo
+        id="campo_codigo"
+        type="email"
+        class="form-control"
+        placeholder=""
+      />
+    </div>
+    <div class="d-flex flex-column align-items-center">
+      <button
+        (click)="verificarCodigo(codigo.value)"
+        class="btn btn-success my-2"
+      >
+        Verificar Código
+      </button>
+    </div>
+  </section>
+
+  <p *ngIf="invalido" class="text-danger">código incorreto</p>
+  <p *ngIf="expirado" class="text-danger">Tempo Expirado</p>
+  <button *ngIf="expirado" (click)="voltar()" class="btn btn-warning my-2">
+    Tentar Novamente
+  </button>
+  <div>
+    <p>{{ tempoRestante }} Segundos</p>
+  </div>
+</main>
+
+<h1 *ngIf="enviado" class="d-flex flex-column align-items-center my-5">
+  Validando...
+  <div class="bar my-3"></div>
+</h1>
